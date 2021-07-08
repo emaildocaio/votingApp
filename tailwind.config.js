@@ -1,5 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
+const tailwindcss = require('tailwindcss');
 
 module.exports = {
     purge: [
@@ -23,7 +24,7 @@ module.exports = {
                 'yellow': '#ffc73c',
                 'red': '#ec454f',
                 'green': '#1aab8b',
-                'purple': '#8db60ed'
+                'purple': '#9700C0',
             },
 
             spacing: {
@@ -38,6 +39,10 @@ module.exports = {
             fontFamily: {
                 sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
             },
+
+            fontSize: {
+                xxs: ['0.625rem', {lineHeight: '1rem'}],
+            },
         },
     },
  
@@ -47,5 +52,8 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/line-clamp'),
+    ],
 };
