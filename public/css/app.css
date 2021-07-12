@@ -26040,6 +26040,10 @@ select {
   -webkit-line-clamp: unset;
 }
 
+[x-cloak]{
+  display: none !important;
+}
+
 /* Linha vertical nos comments */
 
 .comments-container::before {
