@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\IdeaController;
+use App\Models\Idea;
 use Illuminate\Support\Facades\Route;
 use Psy\CodeCleaner\FunctionReturnInWriteContextPass;
 
@@ -14,12 +16,8 @@ use Psy\CodeCleaner\FunctionReturnInWriteContextPass;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [IdeaController::class, 'index'])->name('idea.index');
 
-Route::get('/idea', function(){
-    return view('show');
-});
+Route::get('ideas/{idea:slug}', [IdeaController::class, 'show']);
 
 require __DIR__.'/auth.php';
