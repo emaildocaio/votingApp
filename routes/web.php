@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Psy\CodeCleaner\FunctionReturnInWriteContextPass;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
+});
+
+Route::get('/idea', function(){
+    return view('show');
 });
 
 require __DIR__.'/auth.php';
